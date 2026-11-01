@@ -1,0 +1,46 @@
+:root {
+  --ink: #0f1c1a;
+  --ink-soft: #1a2e2a;
+  --fog: #d8e6e1;
+  --mist: #eef5f2;
+  --copper: #c47a3a;
+  --copper-deep: #a35f28;
+  --line: rgba(15, 28, 26, 0.12);
+  --shadow: 0 24px 60px rgba(15, 28, 26, 0.14);
+  --radius: 18px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 700px at 10% -10%, #f3ebe0 0%, transparent 55%),
+    radial-gradient(900px 600px at 100% 0%, #cfe8df 0%, transparent 50%),
+    linear-gradient(165deg, #f7f3ec 0%, #e7f0ec 45%, #dce8e3 100%);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}

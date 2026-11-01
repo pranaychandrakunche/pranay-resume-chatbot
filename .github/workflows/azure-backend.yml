@@ -1,0 +1,41 @@
+name: Build and Push Backend to ACR
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "app/**"
+      - "data/**"
+      - "scripts/**"
+      - "requirements.txt"
+      - "Dockerfile"
+      - ".github/workflows/azure-backend.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Build and push to ACR
+        run: |
+          az acr build \
+            -r ${{ vars.ACR_NAME }} \
+            -t pranay-resume-api:${{ github.sha }} \
+            -t pranay-resume-api:latest \
+            -f Dockerfile \
+            .
+
+      - name: Restart App Service
+        if: ${{ vars.WEBAPP_NAME != '' }}
+        run: |
+          az webapp restart \
+            -n ${{ vars.WEBAPP_NAME }} \
+            -g ${{ vars.RESOURCE_GROUP }}
