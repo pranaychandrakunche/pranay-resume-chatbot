@@ -23,7 +23,7 @@ AI Engineer with 4 years of experience designing, developing, and deploying ente
 
 ## Work Experience
 
-### AI Engineer — Deloitte US-India Offices (July 2025 – Present)
+### AI Engineer — Infosys (July 2025 – Present)
 
 #### Enterprise Multi-Agent Self-Service AI Platform
 - Exceeded the FY26 adoption target by enabling the platform to save 20,000+ employee hours, empowering employees to resolve HR, IT, Finance, and Policy queries through AI-powered SideKick Self-Service while significantly reducing dependency on the Global Command Centre (GCC) and walk-in IT support.
