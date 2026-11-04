@@ -4,7 +4,7 @@ import './App.css'
 
 const SUGGESTIONS = [
   'What are your core AI skills?',
-  'Tell me about your Deloitte work',
+  'Tell me about your Infosys work',
   'Which certifications do you have?',
   'Describe your RAG / LangGraph experience',
 ]
