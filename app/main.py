@@ -1,7 +1,7 @@
 """FastAPI entrypoint for Pranay's resume chatbot."""
 
 import logging
-from contextlib import asynccontextmanagermhm
+from contextlib import asynccontextmanager
 
 
 from fastapi import FastAPI
