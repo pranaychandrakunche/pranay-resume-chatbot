@@ -1,13 +1,16 @@
 """FastAPI entrypoint for Pranay's resume chatbot."""
 
 import logging
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanagermhm
+
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes import chat, health
 from app.config import get_settings
+import os
+from azure.monitor.opentelemetry import configure_azure_monitor
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -32,6 +35,9 @@ async def lifespan(_app: FastAPI):
 
 
 def create_app() -> FastAPI:
+    if os.getenv("APPLICATIONINSIGHTS_CONNECTION_STRING"):
+        configure_azure_monitor()
+
     settings = get_settings()
 
     app = FastAPI(
